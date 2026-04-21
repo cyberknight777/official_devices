@@ -102,7 +102,7 @@ If you have run the command correctly, your device's screen will confirm that yo
 Now that you have unlocked the bootloader, download the following files from the ROM posts:
 
 - ROM zip.
-- Initial install zip.
+- [Initial install zip](https://sourceforge.net/projects/pixelos-releases/files/sixteen/cancunf/recovery/).
 
 e.g: PixelOS_cancunf-16.0-20251111-0513.zip and PixelOS\_16\_cancunf\_initial\_install.zip
 
@@ -126,7 +126,16 @@ An example output would be as such:
 ZY22HZLCR2	fastbootd
 ```
 
-Remember, it has to say fastbootd, not fastboot. If it says fastboot, re-read the instructions again.
+Some operating systems may report FastbootD Mode as fastboot as well so to properly confirm if you are in FastbootD Mode, you may run ```fastboot getvar is-userspace```.
+
+An example output would be as such:
+
+```
+is-userspace: yes
+Finished. Total time: 0.001s
+```
+
+If it says no, re-read the instructions again.
 
 The reason why you need to be in fastbootd and not bootloader (fastboot) is because you cannot flash images in bootloader due to Motorola implementing a sort of timestamp check within the bootloader which then results in an error like such:
 
